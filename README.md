@@ -13,6 +13,8 @@ Part of PLL block diagram:
   - <img src="https://user-images.githubusercontent.com/94942531/154814058-aa8071a9-cf8d-4714-97cd-b613777beaa5.jpg" width="600" height="400" />
 
 - Low pass filter: Multiple aspects, primarily to smoothen the output signal and also to stabilize the circuit.
+  - <img src="https://user-images.githubusercontent.com/94942531/154818198-ee265ae5-fc26-4a90-a59b-ade60e951c69.jpg" width="600" height="400" />
+
 - Voltage controlled oscillator: Generation of clk signal as per the analog signal from charge pump.
   - <img src="https://user-images.githubusercontent.com/94942531/154814094-89523427-7746-4571-8acf-90304cc382e8.jpg" width="600" height="400" />
 - Frequency divider: Coefficient value of this divider decides the clock multiplier value of PLL. If divider is dividing the output clock by 8 then, PLL can multiply the input signal by 8.
