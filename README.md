@@ -1,22 +1,27 @@
 # PLL-workshop
 
-PLL- Need: To generate clk signal with spectral purity which is otherwise difficult to achieve with VCO(Voltage Controlled Oscillator) and Quartz crystal.
+PLL- Need: To generate clk signal with spectral purity which is otherwise difficult to achieve with only VCO(Voltage Controlled Oscillator) or only Quartz crystal.
 
-img of PLL can be added here
+<img src="https://user-images.githubusercontent.com/94942531/154814007-fdf1c555-38b8-4db6-aa16-fcf1ecf8f0e0.jpg" width="800" height="400" />
 
 Part of PLL block diagram:
 - Phase frequency detector: Does the comparison of reference with output signal
-  - It has 2 output signals, up signal to increase the frequency and down signal to decrease the frequency of the output signal of PLL. 
+  - It has 2 output signals, up signal to increase the frequency and down signal to decrease the frequency of the output signal of PLL
+
 - Charge pump: Converts output of PFD signal to analog signal
-  - It gives analog equivalent of up and down signal by either increasing or decreasing the voltage magnitude
+  - It gives analog equivalent of up and down signal by either increasing or decreasing the voltage magnitude 
+  - <img src="https://user-images.githubusercontent.com/94942531/154814058-aa8071a9-cf8d-4714-97cd-b613777beaa5.jpg" width="600" height="400" />
+
 - Low pass filter: Multiple aspects, primarily to smoothen the output signal and also to stabilize the circuit.
 - Voltage controlled oscillator: Generation of clk signal as per the analog signal from charge pump.
+  - <img src="https://user-images.githubusercontent.com/94942531/154814094-89523427-7746-4571-8acf-90304cc382e8.jpg" width="600" height="400" />
 - Frequency divider: Coefficient value of this divider decides the clock multiplier value of PLL. If divider is dividing the output clock by 8 then, PLL can multiply the input signal by 8.
+
 
 Specifications:
 - Supply voltage: 1.8V
 - Temperature: room temperature
-- Process corner: TT corner
+- Process corner: TT
 - Reference clock signal: Fmin = 5MHz and Fmax = 12.5 MHz
 - Duty cycle: 50%
 - Multiplier: 8x  
