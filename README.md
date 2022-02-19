@@ -6,12 +6,20 @@ img of PLL can be added here
 
 Part of PLL block diagram:
 - Phase frequency detector: Does the comparison of reference with output signal
+  - It has 2 output signals, up signal to increase the frequency and down signal to decrease the frequency of the output signal of PLL. 
 - Charge pump: Converts output of PFD signal to analog signal
-- Low pass filter: Multiple aspects, discussed later 
-- Voltage controlled oscillator: Generation of clk signal
-- Frequency divider: coefficient value of this divider decides the clock multiplier value of PLL. If divider is dividing the output clock by 8 then, PLL can multiply the input signal by 8.
+  - It gives analog equivalent of up and down signal by either increasing or decreasing the voltage magnitude
+- Low pass filter: Multiple aspects, primarily to smoothen the output signal and also to stabilize the circuit.
+- Voltage controlled oscillator: Generation of clk signal as per the analog signal from charge pump.
+- Frequency divider: Coefficient value of this divider decides the clock multiplier value of PLL. If divider is dividing the output clock by 8 then, PLL can multiply the input signal by 8.
 
 Specifications:
+- Supply voltage: 1.8V
+- Temperature: room temperature
+- Process corner: TT corner
+- Reference clock signal: Fmin = 5MHz and Fmax = 12.5 MHz
+- Duty cycle: 50%
+- Multiplier: 8x  
 
 Pre-layout simulations:
 
