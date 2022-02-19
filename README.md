@@ -4,7 +4,7 @@ PLL- Need: To generate clk signal with spectral purity which is otherwise diffic
 
 <img src="https://user-images.githubusercontent.com/94942531/154814007-fdf1c555-38b8-4db6-aa16-fcf1ecf8f0e0.jpg" width="800" height="400" />
 
-Part of PLL block diagram:
+Parts of PLL block diagram:
 - Phase frequency detector: Does the comparison of reference with output signal
   - It has 2 output signals, up signal to increase the frequency and down signal to decrease the frequency of the output signal of PLL
 
