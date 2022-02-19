@@ -16,6 +16,8 @@ Part of PLL block diagram:
 - Voltage controlled oscillator: Generation of clk signal as per the analog signal from charge pump.
   - <img src="https://user-images.githubusercontent.com/94942531/154814094-89523427-7746-4571-8acf-90304cc382e8.jpg" width="600" height="400" />
 - Frequency divider: Coefficient value of this divider decides the clock multiplier value of PLL. If divider is dividing the output clock by 8 then, PLL can multiply the input signal by 8.
+  - <img src="https://user-images.githubusercontent.com/94942531/154817567-229b4bc0-6047-4af5-a11f-1c3337e8aa94.jpg" width="600" height="400" />
+
 
 
 Specifications:
