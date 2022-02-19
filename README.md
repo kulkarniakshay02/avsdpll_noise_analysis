@@ -34,3 +34,10 @@ Graph of output voltage for down signal:
 
 <img src="https://user-images.githubusercontent.com/94942531/154800888-ef5f40d7-86a3-4ae1-8514-82204d278f90.png" width="500" height="400" />
 
+Voltage Controlled Circuit:
+
+<img src="https://user-images.githubusercontent.com/94942531/154801702-6b859d78-ff80-4c65-9700-2ec001850dc3.png" width="500" height="400" />
+
+Phase Frequency Detector circuit:
+
+<img src="https://user-images.githubusercontent.com/94942531/154801868-74986f19-c842-4866-ba7b-933af5e733ae.png" width="500" height="400" />
