@@ -58,3 +58,7 @@ Voltage Controlled Circuit:
 Phase Frequency Detector circuit:
 
 <img src="https://user-images.githubusercontent.com/94942531/154801868-74986f19-c842-4866-ba7b-933af5e733ae.png" width="500" height="400" />
+
+Final simulation of PLL circuit:
+
+<img src="https://user-images.githubusercontent.com/94942531/154839329-ea5e297d-bf87-4047-9ab3-ee96386992c1.png" width="600" height="400" />
