@@ -61,4 +61,8 @@ Phase Frequency Detector circuit:
 
 Final simulation of PLL circuit:
 
+<img width="718" alt="image" src="https://user-images.githubusercontent.com/94942531/154839542-6742a44b-089e-4da3-ab21-c9b1762cc3d3.png">
+
+And the zoomed-in version:
+
 <img src="https://user-images.githubusercontent.com/94942531/154839329-ea5e297d-bf87-4047-9ab3-ee96386992c1.png" width="600" height="400" />
