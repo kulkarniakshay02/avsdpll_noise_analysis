@@ -131,9 +131,11 @@ This could be related to the process node differences (The PLL specifications we
 ## Noise analysis:
 
 It was seen that the VCO output is not matching the reference clock input which can be seen below:
+
 <img src="https://user-images.githubusercontent.com/94942531/159158924-88debf8b-6e64-4b9e-bb29-39e94257f1db.png" />
 
-The zommed-in version:
+The zoomed-in version:
+
 <img src="https://user-images.githubusercontent.com/94942531/159158930-96858087-9446-41e2-885e-e9dacad41937.png" />
 
 In above image, we can see that, the reference clock signal is not aligned with the VCO clock output signal in the second half of clock cycle. This is achieved by using VCO and PFD (Phase Frequency Detector) circuits only. VCO input was fixed at 0.7V and the output was directly connected to one of the inputs of PFD circuit and another input was connected to reference clock signal. Then, this reference clock signal was manually tuned to match the output frequency of the VCO for 0.7V of control voltage input. This helped in determining the differences in the output of VCO with normal clock signal.
@@ -149,9 +151,11 @@ Got these results:
 Total output noise in 1Hz to 100MHz range was nearly 800 uV.   
 
 This graph shows the output noise spectrum plot: 
+
 <img src="https://user-images.githubusercontent.com/94942531/159159332-ebd28c39-4c01-416e-ae09-a5fa72a3031a.png" /> 
 
 The zoomed-in version of the same:
+
 <img src="https://user-images.githubusercontent.com/94942531/159159338-088a7812-9ef7-4977-8201-1cf7c45ab8e1.png" />
 
 However, the output that we see here is the ac small signal noise and not the phase noise as we had expected (this has been confirmed with the ngspice community as well). 
