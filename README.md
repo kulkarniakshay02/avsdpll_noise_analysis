@@ -40,7 +40,7 @@ Red signal = Output of clk divider
 
 Charge pump circuit:
 
-Graph of output voltage due to current leakage (and when no imput is applied): 
+Graph of output voltage due to current leakage (and when no input is applied): 
 <img src="https://user-images.githubusercontent.com/94942531/154800347-276a79de-492e-434a-85cf-8d11be850bc3.png" width="500" height="400" />
 
 Graph of output voltage for up signal:
@@ -63,6 +63,9 @@ Final simulation of PLL circuit:
 
 <img width="718" alt="image" src="https://user-images.githubusercontent.com/94942531/154839542-6742a44b-089e-4da3-ab21-c9b1762cc3d3.png">
 
-And the zoomed-in version:
+And the zoomed-in version at the end of the waveform where the charge pump output is stable:
 
 <img src="https://user-images.githubusercontent.com/94942531/154839329-ea5e297d-bf87-4047-9ab3-ee96386992c1.png" width="600" height="400" />
+
+In the above image, it can be seen that we are periodic output of up and down signals when the charge pump output is stable. So, it looks like the PLL is not correctly locked. The reason behind this is unknown. Here, few approaches to allow PLL to be locked are explored.
+
