@@ -67,5 +67,68 @@ And the zoomed-in version at the end of the waveform where the charge pump outpu
 
 <img src="https://user-images.githubusercontent.com/94942531/154839329-ea5e297d-bf87-4047-9ab3-ee96386992c1.png" width="600" height="400" />
 
-In the above image, it can be seen that we are periodic output of up and down signals when the charge pump output is stable. So, it looks like the PLL is not correctly locked. The reason behind this is unknown. Here, few approaches to allow PLL to be locked are explored.
+In the above image, it can be seen that we are getting the periodic output of up and down signals even when the charge pump output is stable. So, it looks like the PLL is not correctly locked. The reason behind this is unknown. Here, few approaches to allow PLL to be locked are explored.
+
+Two possible approaches were assumed:
+- VCO output frequency is not stable
+- Input to VCO (Charge pump/loop filter output is fluctuating)
+ 
+The first option is explored to good extent and is described below. 
+
+ - Firtly, tried to use ac analysis to plot the frequency domain plot of the output clk signal of VCO but, it was not possible to get the frequency domain plot using ac analysis without an ac source in the design. Then, another approach was to use FFT (Fast Fourier Transform) to get the frequency domain plot and, was getting this output (this graph is the simulation output of VCO only and it's around 28MHz):
+
+<img src="https://user-images.githubusercontent.com/94942531/159157417-79dc3fe3-cdce-4a51-89f7-66d1539693a9.png" />
+
+The above graph is achieved with following statements in control block:
+
+<img src="https://user-images.githubusercontent.com/94942531/159158423-8d077192-e289-49e2-a854-bfdb38323d0b.png" />
+
+There are still unanswered questions like why do we have a bump at the start of the graph at 0MHz where there should be no DC at the output.
+
+So, finally got the clock output with the transcient analysis with the complete prelayput simulation of the PLL circuit at different clock samples.
+
+At 800th VCO output clk signal sample:
+<img src="https://user-images.githubusercontent.com/94942531/159157785-0f4a8b84-1305-4f9f-8e33-0bd890ee5e51.png" />
+
+At 3000th VCO output clk sample:
+<img src="https://user-images.githubusercontent.com/94942531/159157937-739d4c96-0a1d-46af-b04b-7b8cef4cb9db.png" />
+
+At 6000th VCO output clk sample:
+<img src="https://user-images.githubusercontent.com/94942531/159157962-6a15f445-af85-4110-aa54-81b48bc51cc2.png" />
+
+At 10000th VCO output clk sample:
+<img src="https://user-images.githubusercontent.com/94942531/159157969-2ec490ae-2309-4e4c-bdb1-e625d444e3a6.png" />
+
+At 12000th VCO output clk sample:
+<img src="https://user-images.githubusercontent.com/94942531/159157981-934f0eb0-f76f-4769-a1e4-aaf67d5715c4.png" />
+
+At 13500th VCO output clk sample (Fref is the frequency of the reference clock signal):
+<img src="https://user-images.githubusercontent.com/94942531/159157849-2b8dfdcb-7774-45a7-8f05-f9fb55547a75.png" />
+
+The above measurements are taken with the help of .meas statment in ngspice used in following manner (there is a need of transcient analysis with control block for this to work):
+<img src="https://user-images.githubusercontent.com/94942531/159158585-1f180e31-702a-4291-a63d-592423362e20.png" />
+
+So, the analysis of VCO with different control voltages for above mentioned frequency output:
+
+| Sr | Vcontrol input voltage (in volts) | Output clock frequency (in MHz) |
+| ---| --------------------------------  | ------------------------------- |
+| 1 | 0.65 | 63.72 |
+| 2 | 0.67 | 87.48 |
+| 3 | 0.68 | 101.91 |
+| 4 | 0.6782 | 99.18 |
+| 5 | 0.679 | 100.39 (The frequency that we want) |
+| 6 | 0.6925 | 122.67 |
+| 7 | 0.6935 | 124.5 |
+| 8 | 0.6938 | 124.99 (The frequency that we are getting) |
+| 9 | 0.694 | 125.5 |
+
+The voltage difference between required input control voltage and actual control voltage 
+Vdiff = 0.6938 – 0.679 = 14.8 mV 
+
+Basically, we are getting 14.8 mV of extra voltage at the output of charge pump which is causing VCO to give output which is 125MHz. 
+This could be related to the process node differences (The PLL specifications were originally planned for 180nm technology node but, the used technology node is 130nm)
+
+Noise analysis:
+
+
 
