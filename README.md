@@ -1,4 +1,4 @@
-# PLL-workshop
+# PLL
 
 PLL- Need: To generate clk signal with spectral purity which is otherwise difficult to achieve with only VCO(Voltage Controlled Oscillator) or only Quartz crystal.
 
