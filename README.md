@@ -159,3 +159,10 @@ The zoomed-in version of the same:
 <img src="https://user-images.githubusercontent.com/94942531/159159338-088a7812-9ef7-4977-8201-1cf7c45ab8e1.png" />
 
 However, the output that we see here is the ac small signal noise and not the phase noise as we had expected (this has also been confirmed with the ngspice community as well). 
+
+# Acknowledgement
+- Kunal Ghosh, Co-founder of VLSI System Design
+- Darío San Martín Molina, Analog IC designer
+- Laxmi S, Student of Hardware Design and Machine Learning
+- Google Skywater and Efabless
+
